@@ -28,10 +28,10 @@ class SliderImageUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
-  process :resize_to_fill => [700, 250]
+  process :resize_to_fill => [WHITEKIT[:slider_width].presence || 750, WHITEKIT[:slider_height].presence || 250]
 
   version :thumb do
-    process :resize_to_fit => [350, 125]
+    process :resize_to_fil => [350, 125]
   end
 
   # Process files as they are uploaded:
