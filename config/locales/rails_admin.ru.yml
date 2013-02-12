@@ -9,6 +9,7 @@ ru:
         content: 'Содержимое'
         hidden: 'Скрытый'
         image: 'Изображение'
+        link: 'Ссылка'
   admin:
     misc:
       navigation_slider: 'Слайдер'
