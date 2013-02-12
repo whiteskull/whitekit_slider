@@ -1,4 +1,4 @@
-class WhitekitSkiderCreateSliderImages < ActiveRecord::Migration
+class WhitekitSliderCreateSliderImages < ActiveRecord::Migration
   def change
     create_table :slider_images do |t|
       t.string :title
