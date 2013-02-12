@@ -1,0 +1,14 @@
+ru:
+  activerecord:
+    models:
+      slider_image: 'Слайды'
+    attributes:
+      slider_image:
+        title: 'Описание'
+        title_view: 'Описание в слайдере'
+        content: 'Содержимое'
+        hidden: 'Скрытый'
+        image: 'Изображение'
+  admin:
+    misc:
+      navigation_slider: 'Слайдер'

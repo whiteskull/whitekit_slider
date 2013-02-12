@@ -1,0 +1,31 @@
+- unless options[:theme] == 'none'
+  = stylesheet_link_tag "#{component_path}#{options[:theme]}", :media => "all"
+= stylesheet_link_tag "#{component_path}nivo-slider", :media => "all"
+= javascript_include_tag "#{component_path}jquery.nivo.slider.pack"
+
+= render partial: "#{component_path}slider", locals: {slider_images: slider_images, options: options}
+
+%sctipt{:type => "text/javascript"}
+:javascript
+  function parseBoolean(str) {
+    if (typeof str === 'string' && str.toLowerCase() == 'true')
+      return true;
+    return false
+  }
+  $('#slider').nivoSlider({
+    effect: "#{options[:effect]}",
+    slices: parseInt("#{options[:slices]}"),
+    boxCols: parseInt("#{options[:boxCols]}"),
+    boxRows: parseInt("#{options[:boxRows]}"),
+    animSpeed: parseInt("#{options[:animSpeed]}"),
+    pauseTime: parseInt("#{options[:pauseTime]}"),
+    startSlide: parseInt("#{options[:startSlide]}"),
+    directionNav: parseBoolean("#{options[:directionNav]}"),
+    controlNav: parseBoolean("#{options[:controlNav]}"),
+    controlNavThumbs: parseBoolean("#{options[:controlNavThumbs]}"),
+    pauseOnHover: parseBoolean("#{options[:pauseOnHover]}"),
+    manualAdvance: parseBoolean("#{options[:manualAdvance]}"),
+    prevText: "#{options[:prevText]}",
+    nextText: "#{options[:nextText]}",
+    randomStart: parseBoolean("#{options[:randomStart]}")
+  });

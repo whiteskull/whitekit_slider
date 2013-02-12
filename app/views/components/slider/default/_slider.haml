@@ -1,0 +1,13 @@
+.slider-wrapper{class: "#{unless options[:theme] == 'none' then 'theme-' + options[:theme] end}"}
+  #slider.nivoSlider
+    - slider_images.each do |image|
+      - if image.link.present?
+        = link_to image_tag(image.image.url, title: "#{image.title if image.title_view?}"), image.link
+      - else
+        = image_tag(image.image.url, title: "#{image.title if image.title_view?}")
+#htmlcaption.nivo-html-caption
+  %strong This
+  is an example of a
+  %em HTML
+  caption with
+  = link_to 'asdasd', root_path
