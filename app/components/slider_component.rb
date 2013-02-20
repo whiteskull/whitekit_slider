@@ -37,7 +37,7 @@ randomStart: false | start on a random slide
         nextText: 'Next',
         randomStart: false,
     }
-    merge(defaults)
+    merge!(defaults)
 
     @slider_images = SliderImage.visible
   end
